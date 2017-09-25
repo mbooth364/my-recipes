@@ -1,0 +1,13 @@
+<header>
+  <div>{{ recipeItems | categoryList }}</div>
+</header>
+
+<section>
+  <app-recipe-item 
+    [ngClass]="{'medium-tapas': recipeItem.medium==='Tapas', 
+    'medium-sandwiches': recipeItem.medium==='Sandwiches'}"
+    *ngFor="let recipeItem of recipeItems"
+    [recipeItem]="recipeItem"
+    (delete)="onRecipeItemDelete($event)">
+  </app-recipe-item> 
+</section>

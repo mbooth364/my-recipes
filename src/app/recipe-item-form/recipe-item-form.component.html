@@ -1,0 +1,34 @@
+<header>
+    <h2>Add Media to Watch</h2>
+  </header>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(form.value)">
+    <ul>
+      <li>
+        <label for="medium">Medium</label>
+        <select name="medium" id="medium" formControlName="medium">
+          <option value="Sandwiches">Sandwiches</option>
+          <option value="Tapas">Tapas</option>
+          
+        </select>
+      </li>
+      <li>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" formControlName="name">
+      </li>
+      <li>
+        <label for="category">Category</label>
+        <select name="category" id="category" formControlName="category">
+          <option value="Sandwich">Sandwich</option>
+          <option value="Tapas">Tapas</option>
+          
+        </select>
+      </li>
+      <li>
+        <label for="cookedOn">Cooked On</label>
+        <input type="text" name="cookedOn" id="cookedOn" maxlength="14" formControlName="cookedOn">
+      </li>
+    </ul>
+    <button type="submit" [disabled]="!form.valid">Save</button>
+  </form>
